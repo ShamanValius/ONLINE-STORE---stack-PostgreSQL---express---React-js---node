@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+    postgres:
+        image: postgres:15.3
+        restart: always #так лучше не делать
+        ports:
+            - ${POSTGRES_DB_PORT}:${POSTGRES_DB_PORT}
+        environment:
+            - POSTGRES_USER=${POSTGRES_DB_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_DB_PASSWORD}
+            - POSTGRES_DB=${POSTGRES_DB_NAME}
+        volumes:
+            - postgresTEST:/var/lib/postgresql/data
+        networks:
+            - network_1
+    pgadmin:
+        image: dpage/pgadmin4
+        restart: always
+        ports:
+            - 8080:80
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+            - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+            - PGADMIN_LISTEN_PORT=${PGADMIN_LISTEN_PORT}
+            - PGADMIN_SERVER_JSON_FILE=/pgadmin4/servers.json
+        volumes:
+            - ./pgadmin/servers.json:/pgadmin4/servers.json
+        networks:
+            - network_1
+        depends_on:
+            - postgres
+
+volumes:
+    postgresTEST:
+
+networks:
+    network_1:
