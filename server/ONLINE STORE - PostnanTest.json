@@ -1,0 +1,528 @@
+{
+	"info": {
+		"_postman_id": "2526a2d6-6210-4e01-8e23-fc18b87786a8",
+		"name": "ONLINE STORE - stack PostgreSQL + express + React js + node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27753311"
+	},
+	"item": [
+		{
+			"name": "type",
+			"item": [
+				{
+					"name": "type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/type",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Телефон\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/type",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "brand",
+			"item": [
+				{
+					"name": "brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/brand",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"China2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/brand",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"brand"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "device",
+			"item": [
+				{
+					"name": "device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/device?brandId=&typeId&limit=&page=",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"device"
+							],
+							"query": [
+								{
+									"key": "brandId",
+									"value": ""
+								},
+								{
+									"key": "typeId",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deviceID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/device/7",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"device",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "device",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "POCO 11",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "typeId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "brandId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/D:/ValiuS/Downloads/none.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/device",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"device"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Обновляем токен в переменной\r",
+									"pm.collectionVariables.set(\"token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/user/auth",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"user",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Обновляем токен в переменной\r",
+									"pm.collectionVariables.set(\"token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user@example.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Обновляем токен в переменной\r",
+									"pm.collectionVariables.set(\"token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@example.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registratioUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Обновляем токен в переменной\r",
+									"pm.collectionVariables.set(\"token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"user@example.com\",\r\n    \"password\":\"password\",\r\n    \"role\":\"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/user/registration",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"user",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registrationAdmin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Обновляем токен в переменной\r",
+									"pm.collectionVariables.set(\"token\", pm.response.json().token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@example.com\",\r\n    \"password\":\"password\",\r\n    \"role\":\"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}:{{PORT checking server started}}/api/user/registration",
+							"host": [
+								"{{url}}"
+							],
+							"port": "{{PORT checking server started}}",
+							"path": [
+								"api",
+								"user",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "checking server started",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}:{{PORT checking server started}}",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{PORT checking server started}}"
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PORT checking server started",
+			"value": "1900"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
