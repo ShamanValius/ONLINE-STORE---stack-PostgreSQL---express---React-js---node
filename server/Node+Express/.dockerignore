@@ -1,0 +1,8 @@
+# Папки
+node_modules/
+dist/
+build/
+
+# Файлы
+.env
+.DS_Store
